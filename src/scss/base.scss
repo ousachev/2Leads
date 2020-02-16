@@ -89,7 +89,6 @@ h1 {
 
     @include phones {
         font-size: rem(50px);
-        line-height: rem(50px);
         margin-bottom: rem(25px);
     }
 }
