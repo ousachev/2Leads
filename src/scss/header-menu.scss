@@ -1,0 +1,27 @@
+.header__burger {
+    position: relative;
+    width: rem(25px);
+    height: rem(14px);
+}
+
+.header__menu {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: rem(50px);
+    height: 100%;
+
+    &--decor {
+        display: inline-block;
+        height: 2px;
+        width: rem(50px);
+        border-radius: 3px;
+        background-color: #fff;
+
+        @include phones {
+            width: rem(35px);
+        }
+    }
+}

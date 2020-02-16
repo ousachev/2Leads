@@ -1,0 +1,84 @@
+.partners {
+    background: linear-gradient(180deg, #fdf4f4 0%, #ecf3ec 100%);
+    padding: rem(60px) 0px;
+    color: $black;
+}
+
+.brand__list {
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+    justify-content: center;
+}
+
+.brand__elem {
+    width: rem(430px);
+    margin: rem(61px) rem(32.6px) rem(60px) 0;
+    border: 2px solid transparent;
+
+    &:hover {
+        .brand__icon {
+            border: 2px solid $gold;
+        }
+    }
+
+    @include tablets {
+        margin: 0;
+    }
+}
+
+.brand__icon {
+    height: rem(240px);
+    box-shadow: rem(0px) rem(0px) rem(15px) rgba(0, 0, 0, 0.15);
+    margin-bottom: rem(26px);
+    transition: background 1s linear;
+    border: 2px solid transparent;
+}
+
+.brand__icon[data="1"] {
+    background: #fff;
+    right: -9999;
+
+    &:hover {
+        background: url(../img/facebook.jpeg) center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.brand__icon[data="2"] {
+    background: #fff;
+
+    &:hover {
+        background: url(../img/amazon.jpg) center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.brand__icon[data="3"] {
+    background: #fff;
+
+    &:hover {
+        background: url(../img/tesla.png) center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.brand__icon[data="4"] {
+    background: #fff;
+
+    &:hover {
+        background: url(../img/ultra.jpg) center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.brand__review {
+    font-size: rem(18px);
+    line-height: 160%;
+    font-weight: 700;
+    margin-bottom: rem(10px);
+}

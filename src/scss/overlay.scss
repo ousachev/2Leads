@@ -1,0 +1,217 @@
+.overlay {
+    background: white;
+    backdrop-filter: blur(50px);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    flex-direction: column;
+
+    &.active {
+        display: flex;
+    }
+
+    &__info {
+        width: 100%;
+    }
+
+    &__about {
+        display: flex;
+        justify-content: space-between;
+        background: #fff;
+
+        // @include phones {
+        //     flex: 1;
+        //     margin-bottom: rem(110px);
+        // }
+    }
+
+    &__logo {
+        font-size: rem(90px);
+        display: inline-block;
+        color: black;
+
+        @include phones {
+            font-size: rem(50px);
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        @include phones {
+            align-items: flex-start;
+        }
+    }
+
+    &__contacts {
+        display: -webkit-box;
+        align-items: center;
+
+        @include tablets {
+            display: none;
+        }
+
+        &--phone {
+            display: flex;
+            font-size: rem(24px);
+            margin-right: rem(42px);
+            font-family: Museo Sans Cyrl 300;
+            line-height: rem(29px);
+            text-align: right;
+            color: $black;
+            font-weight: bold;
+
+            &:hover {
+                opacity: 0.8;
+
+                .phone {
+                    opacity: 1;
+                    fill: blue;
+                }
+            }
+        }
+
+        // @include phones {
+        //     display: none;
+        // }
+    }
+}
+
+.phone__overlay {
+    fill: black;
+}
+
+.overlay__vk {
+    margin-right: rem(60px);
+}
+
+.overlay__close {
+    cursor: pointer;
+    height: rem(50px);
+    width: rem(50px);
+    position: relative;
+}
+
+.overlay__cross {
+    width: rem(50px);
+    height: 2px;
+    background: black;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: rem(50px);
+        height: 2px;
+        background: black;
+        transform: rotate(90deg);
+    }
+}
+
+.overlay__nav {
+    flex-grow: 1;
+    display: flex;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: black;
+    /* Firefox */
+    background-image: -moz-radial-gradient(circle,
+            #ffffff 2px,
+            rgba(248, 255, 128, 0.5) 4px,
+            transparent 40px),
+        -moz-radial-gradient(circle, #ffffff 1px, rgba(255, 186, 170, 0.4) 3px, transparent 30px),
+        -moz-radial-gradient(ellipse, rgba(255, 255, 255, 0.9) 1px, rgba(251,
+                255,
+                186,
+                0.3) 2px, transparent 40px),
+        -moz-radial-gradient(ellipse, rgba(255, 255, 255, 0.4), rgba(253,
+                255,
+                219,
+                0.2) 1px, transparent 30px);
+    /* Webkit */
+    background-image: -webkit-gradient(radial,
+            50% 50%,
+            2,
+            50% 50%,
+            40,
+            from(white),
+            color-stop(0.1, rgba(248, 255, 128, 0.5)),
+            to(transparent)),
+        -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 30, from(white), color-stop(0.1, rgba(255, 186, 170, 0.4)), to(transparent)),
+        -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 40, from(rgba(255, 255, 255, 0.9)), color-stop(0.05, rgba(251, 255, 186, 0.3)), to(transparent)),
+        -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 30, from(rgba(255, 255, 255, 0.4)), color-stop(0.03, rgba(253, 255, 219, 0.2)), to(transparent));
+    /* Background Attributes */
+    background-size: 550px 550px, 350px 350px, 250px 270px, 220px 200px;
+    background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+    /* Animation */
+    animation-name: movement;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* Firefox */
+    -moz-animation-name: movement;
+    -moz-animation-duration: 5s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    /* Webkit */
+    -webkit-animation-name: movement;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes movement {
+    from {
+        background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+    }
+
+    to {
+        background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px;
+    }
+}
+
+@-moz-keyframes movement {
+    from {
+        background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+    }
+
+    to {
+        background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px;
+    }
+}
+
+@-webkit-keyframes movement {
+    from {
+        background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+    }
+
+    to {
+        background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px;
+    }
+}
+
+.nav__elem {
+    margin-bottom: rem(80px);
+    font-size: rem(35px);
+}
+
+.nav__link {
+    border: 1px solid gold;
+    padding: rem(20px) rem(30px);
+    color: $gold;
+}

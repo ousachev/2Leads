@@ -1,0 +1,340 @@
+.second {
+    color: $metall;
+    background: url("../img/12620.jpg") center center/no-repeat;
+    padding: rem(70px) 0;
+
+    @include phones {
+        padding: rem(40px) 0;
+    }
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    max-width: rem(1400px);
+    margin-left: auto;
+    margin-right: auto;
+    margin: rem(40px) 0;
+
+    @include phones {
+        margin: 0;
+    }
+}
+
+.slider__wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider__items {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.slider__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    color: black;
+    font-size: rem(20px);
+    margin-bottom: rem(20px);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+
+    @include tablets {
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+
+    @include phones {
+        padding: 0;
+        align-items: center;
+        margin-bottom: rem(30px);
+        font-size: rem(20px);
+    }
+}
+
+.left__side {
+    margin-right: rem(80px);
+    width: 50%;
+    padding-left: rem(40px);
+
+    @include tablets {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.right__side {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+    @include tablets {
+        width: 100%;
+        justify-content: center;
+        height: 50%;
+    }
+
+    @include phones {
+        margin-bottom: rem(35px);
+    }
+}
+
+.slide__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(39px);
+
+    @include tablets {
+        align-items: center;
+    }
+}
+
+.name {
+    font-family: "Bebas Neue";
+    font-size: rem(70px);
+    line-height: rem(70px);
+    text-transform: uppercase;
+    color: $gold;
+    opacity: 0.6;
+    animation: blink 2s infinite;
+
+    @keyframes blink {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0.1;
+        }
+    }
+
+    @include tablets {
+        text-align: center;
+    }
+
+    @include phones {
+        font-size: rem(45px);
+        line-height: rem(45px);
+        margin-bottom: rem(20px);
+    }
+}
+
+.slide__info--button {
+    display: none;
+
+    @include phones {
+        display: block;
+        background: #ffffff;
+        border: 1px solid #888888;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-family: Museo Sans Cyrl;
+        font-size: 13px;
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: 0.155em;
+        text-transform: uppercase;
+        color: #888888;
+        padding: rem(10px) 0;
+        width: rem(170px);
+    }
+}
+
+.slider__slide--list {
+    margin-bottom: rem(50px);
+    list-style: none;
+
+    @include tablets {
+        margin-bottom: 0;
+    }
+
+    @include phones {
+        margin-bottom: rem(50px);
+        display: none;
+        transition: all ease-in 1s;
+    }
+}
+
+.slider__slide--list--item {
+    width: rem(350px);
+    color: gray;
+    margin-bottom: rem(25px);
+
+    &:before {
+        content: "";
+        background: $metall;
+        width: rem(10px);
+        height: rem(10px);
+        border-radius: rem(3px);
+        display: inline-block;
+        line-height: 2rem;
+        color: $metall;
+        margin-right: rem(29px);
+
+        @include phones {
+            margin-right: rem(13px);
+        }
+    }
+}
+
+.text-active {
+    @include phones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.slider__slide--list--desc {
+    width: 90%;
+}
+
+.slider__slide--info--title {
+    font-size: rem(18px);
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: rem(10px);
+}
+
+.slider__slide--info--text {
+    font-size: rem(25px);
+    line-height: 160%;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
+
+    @include tablets {
+        text-align: center;
+    }
+}
+
+.slider__slide--info--author {
+    font-size: rem(20px);
+    line-height: 160%;
+    color: $black;
+
+    @include tablets {
+        text-align: center;
+    }
+}
+
+.slide__image {
+    width: 100%;
+    max-width: rem(650px);
+    height: auto;
+
+    @include tablets {
+        height: rem(380px);
+    }
+
+    @include phones {
+        width: 100%;
+        height: rem(300px);
+    }
+}
+
+.slider__control {
+    position: absolute;
+    top: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: rem(40px);
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+    height: rem(50px);
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.slider__control_show {
+    display: flex;
+}
+
+.slider__control:hover,
+.slider__control:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    opacity: 0.9;
+}
+
+.slider__control_prev {
+    left: 0;
+}
+
+.slider__control_next {
+    right: 0;
+}
+
+.slider__control::before {
+    content: "";
+    display: inline-block;
+    width: rem(20px);
+    height: rem(20px);
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.slider__control_prev::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control_next::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+/* стили для индикаторов */
+.slider__indicators {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include phones {
+        display: none;
+    }
+}
+
+.slider__indicators li {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 4px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: $gold;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.slider__indicators li.active {
+    background-color: gray;
+}
+
+.img-fluid {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}

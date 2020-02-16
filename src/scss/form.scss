@@ -1,0 +1,135 @@
+.order {
+    background-image: linear-gradient(to right,
+            rgb(6, 11, 59),
+            rgb(12, 39, 86),
+            rgb(18, 66, 113),
+            rgb(25, 94, 140),
+            rgb(31, 121, 167),
+            rgb(37, 149, 194),
+            rgb(55, 159, 169),
+            rgb(73, 168, 143),
+            rgb(92, 178, 118),
+            rgb(110, 188, 92),
+            rgb(128, 197, 67),
+            rgb(146, 207, 41));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: rem(700px);
+    position: relative;
+}
+
+.form {
+    width: rem(650px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: rem(650px);
+    flex-grow: 1;
+
+    @include phones {
+        width: 100%;
+    }
+}
+
+.form__title {
+    background: $metall;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: rem(50px);
+}
+
+.form__row {
+    display: flex;
+    padding: rem(7px) rem(8px);
+    margin-bottom: rem(7px);
+    justify-content: space-around;
+    width: inherit;
+
+    @include phones {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+form label {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: rem(120px);
+    padding: rem(6px) 0;
+    color: #464646;
+    vertical-align: top;
+}
+
+.req {
+    color: #ca5354;
+}
+
+.form__note {
+    font-size: 1.2em;
+    line-height: 1.33em;
+    font-weight: normal;
+    padding: rem(2px) rem(7px);
+    margin-bottom: rem(10px);
+
+    @include phones {
+        text-align: center;
+    }
+}
+
+.form input {
+    width: rem(412px);
+}
+
+form input:focus,
+.form__textarea:focus {
+    outline: none;
+}
+
+.form__textarea {
+    height: rem(100px);
+    width: rem(412px);
+    resize: none;
+}
+
+::-webkit-input-placeholder {
+    color: #aaafbd;
+    font-style: italic;
+}
+
+:-moz-placeholder {
+    color: #aaafbd;
+    font-style: italic;
+}
+
+::-moz-placeholder {
+    color: #aaafbd;
+    font-style: italic;
+}
+
+:-ms-input-placeholder {
+    color: #aaafbd;
+    font-style: italic;
+}
+
+.form__txt {
+    display: inline-block;
+    padding: rem(8px) rem(9px);
+    padding-right: rem(30px);
+    width: rem(240px);
+    font-family: "Oxygen", sans-serif;
+    font-size: 1.35em;
+    font-weight: normal;
+    color: #898989;
+}
+
+.form__button {
+    margin-left: rem(27px);
+
+    @include phones {
+        margin: 0;
+    }
+}

@@ -1,0 +1,29 @@
+.footer {
+    height: rem(78px);
+}
+
+.footer__container {
+    height: inherit;
+}
+
+.footer__desc {
+    color: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+}
+
+.footer__info {
+    font-size: rem(18px);
+    line-height: rem(27px);
+    font-weight: bold;
+}
+
+.footer__icon {
+    background: url("../img/tesla.png") center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: rem(40px);
+    width: rem(40px);
+}

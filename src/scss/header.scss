@@ -1,0 +1,339 @@
+.first {
+    background: url(../img/00.jpg) no-repeat center center/cover;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+
+    &__about {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: rem(50px);
+
+        @include phones {
+            flex: 1;
+            margin-bottom: rem(110px);
+        }
+    }
+
+    &__logo {
+        font-size: rem(90px);
+        display: inline-block;
+        background: $metall;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &:hover {
+            background: $gold;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.6s linear;
+        }
+
+        @include phones {
+            font-size: rem(50px);
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        @include phones {
+            align-items: flex-start;
+        }
+    }
+
+    &__contacts {
+        display: -webkit-box;
+        align-items: center;
+
+        @include tablets {
+            display: none;
+        }
+
+        &--phone {
+            display: flex;
+            font-size: rem(24px);
+            margin-right: rem(42px);
+            font-family: Museo Sans Cyrl 300;
+            line-height: rem(29px);
+            text-align: right;
+
+            &:hover {
+                opacity: 0.8;
+
+                .phone {
+                    opacity: 1;
+                    fill: $gold;
+                }
+            }
+        }
+
+        @include phones {
+            display: none;
+        }
+    }
+
+    &__title {
+        background: $metall;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: rem(60px);
+        display: inline-block;
+    }
+
+    &__subtitle {
+        font-size: rem(50px);
+        line-height: rem(60px);
+        font-weight: bold;
+        margin-bottom: rem(50px);
+
+        @include phones {
+            font-size: rem(20px);
+            line-height: rem(24px);
+            margin-bottom: rem(20px);
+            text-align: center;
+        }
+    }
+}
+
+.header__title br {
+    display: none;
+
+    @include phones {
+        display: block;
+    }
+}
+
+.header__desc {
+    display: flex;
+    flex-direction: column;
+
+    @include phones {
+        align-items: center;
+    }
+}
+
+.header__desc-info {
+    display: inline-block;
+
+    @include phones {
+        padding-right: rem(40px);
+        height: rem(150px);
+    }
+}
+
+.header__desc-info h1 {
+    overflow: hidden;
+    border-right: 0.17em solid #e29508;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3s steps(30, end), blink-caret 0.7s step-end infinite;
+
+    @include phones {
+        margin-left: rem(30px);
+        animation: typing 2s steps(30, end);
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 60%;
+            }
+        }
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 45%;
+        }
+    }
+
+    @keyframes blink-caret {
+
+        from,
+        to {
+            border-color: transparent;
+        }
+
+        50% {
+            border-color: orange;
+        }
+    }
+}
+
+.phone {
+    margin-right: rem(21px);
+    fill: #fff;
+}
+
+.instagram {
+    background: radial-gradient(98.67% 98.67% at -7.7% 73.44%,
+            #ffdd55 0%,
+            #ffdd55 10%,
+            #ff543e 50%,
+            #c837ab 100%);
+    margin-right: rem(28px);
+}
+
+.vk {
+    margin-right: rem(56px);
+}
+
+.header__burger {
+    position: relative;
+    width: rem(25px);
+    height: rem(14px);
+}
+
+.header__menu--decor {
+    @include phones {
+        width: rem(35px);
+    }
+}
+
+.header__bottom {
+    display: inline-flex;
+    flex-direction: column;
+
+    @include phones {
+        flex-direction: column-reverse;
+        display: flex;
+        align-items: inherit;
+    }
+}
+
+.adv__list {
+    margin-bottom: rem(100px);
+}
+
+.adv__item {
+    cursor: pointer;
+    padding-bottom: rem(15px);
+    display: flex;
+    align-items: center;
+    padding: rem(10px) rem(10px);
+    background: transparent;
+    height: rem(50px);
+
+    @include phones {
+        padding: 0;
+    }
+
+    &.active {
+        .adv__item--title {
+            background: $metall;
+            border-radius: rem(4px);
+            font-size: rem(36px);
+            font-weight: bold;
+            transition: all ease-in-out 0.5s;
+
+            @include phones {
+                font-size: rem(20px);
+                line-height: rem(24px);
+                color: white;
+                width: rem(189px);
+            }
+        }
+    }
+
+    &:hover {
+        .adv__item--title {
+            opacity: 0.5;
+        }
+    }
+
+    &--images {
+        display: flex;
+        align-items: center;
+        margin-right: rem(40px);
+
+        @include phones {
+            margin-right: rem(20px);
+        }
+    }
+}
+
+.adv__item--title {
+    font-size: rem(24px);
+    font-weight: bold;
+
+    @include phones {
+        color: $black;
+        font-size: rem(16px);
+    }
+}
+
+.gold__text {
+    color: $gold;
+}
+
+.big__btn {
+    font-size: rem(19px);
+    line-height: rem(23px);
+    text-align: center;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    background: $metall;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    border-radius: rem(4px);
+    color: $gold;
+    font-weight: bold;
+    padding: rem(15px) rem(70px);
+    margin-bottom: rem(50px);
+    width: rem(266px);
+
+    &:hover {
+        opacity: 0.5;
+        border: 1px solid $gold;
+        transition: all 0.8s linear;
+    }
+
+    @include phones {
+        line-height: normal;
+        padding: rem(15px) rem(30px);
+    }
+}
+
+.block__arrow {
+    text-align: center;
+
+    &--link {
+        text-align: center;
+        display: inline-block;
+    }
+}
+
+.arrow__link {
+    -webkit-overflow-scrolling: touch;
+}
+
+.arrow__link:hover {
+    position: relative;
+    bottom: rem(-15px);
+    animation: bounce 1.3s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: rem(-15px);
+    }
+}
+
+.link__down {
+    fill: $gold;
+    transform: rotate(90deg);
+}
