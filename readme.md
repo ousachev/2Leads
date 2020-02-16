@@ -1,4 +1,4 @@
-# Демо автоматизации с gulp 4
+HTML,CSS,JS,JQuery,Gulp
 
 Установка: `npm i`.
 
