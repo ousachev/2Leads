@@ -143,7 +143,7 @@ let slideShow = (function() {
       if (_isTouchDevice()) {
         _slider.addEventListener("touchstart", function(e) {
           _startX = e.changedTouches[0].clientX;
-          // _startAutoplay();
+          _startAutoplay();
         });
         _slider.addEventListener("touchend", function(e) {
           let _endX = e.changedTouches[0].clientX,
@@ -153,7 +153,7 @@ let slideShow = (function() {
           } else if (_deltaX < -_stepTouch) {
             _move("next");
           }
-          // _startAutoplay();
+          _startAutoplay();
         });
       } else {
         for (let i = 0, length = _sliderControls.length; i < length; i++) {
@@ -168,11 +168,11 @@ let slideShow = (function() {
               ? "next"
               : "prev"
           );
-          // _startAutoplay();
+          _startAutoplay();
         } else if (e.target.getAttribute("data-slide-to")) {
           e.preventDefault();
           _moveTo(parseInt(e.target.getAttribute("data-slide-to")));
-          // _startAutoplay();
+          _startAutoplay();
         }
       });
       document.addEventListener(
@@ -181,7 +181,7 @@ let slideShow = (function() {
           if (document.visibilityState === "hidden") {
             _stopAutoplay();
           } else {
-            // _startAutoplay();
+            _startAutoplay();
           }
         },
         false
@@ -191,7 +191,7 @@ let slideShow = (function() {
           _stopAutoplay();
         });
         _slider.addEventListener("mouseleave", function() {
-          // _startAutoplay();
+          _startAutoplay();
         });
       }
     };
@@ -201,7 +201,7 @@ let slideShow = (function() {
     // установливаем обработчики для событий
     _setUpListeners();
     // запускаем автоматическую смену слайдов, если установлен соответствующий ключ
-    // _startAutoplay();
+    _startAutoplay();
 
     return {
       // метод слайдера для перехода к следующему слайду
@@ -220,7 +220,7 @@ let slideShow = (function() {
       // метод запускающий автоматическую смену слайдов
       cycle: function() {
         _config.isAutoplay = true;
-        // _startAutoplay();
+        _startAutoplay();
       }
     };
   };
